@@ -77,7 +77,7 @@ int main (){
 		cout << i+1 << "th Value, Weight :";
 		cin >> v >> w;
 		r = (double) v / (double) w;
-		item_s.push_back({i, v, w, r});
+		item_s.push_back({i+1, v, w, r});
 	}
   
 	MaxVal = CalcMaxValforKnapSack(W, item_s, pitem);
