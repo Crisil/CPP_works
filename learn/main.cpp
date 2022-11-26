@@ -85,6 +85,10 @@ int main()
 
   for (it = vInts.begin(); it != vInts.end(); it++)
     cout << "Value : " << *it << "\r\n";
+  cout << endl;
+	vInts.erase(vInts.begin(), vInts.begin()+4);
+  for (it = vInts.begin(); it != vInts.end(); it++)
+    cout << "Value : " << *it << "\r\n";
 
 
   return 0;
