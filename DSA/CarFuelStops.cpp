@@ -20,19 +20,17 @@ void display(vector<T>vec) {
 //  -1 : not possible to reach destination
 //  act_stop_points : Actually stopped distance points
 int MinRefillPoints(int distance2cover, int limit, vector<int> avl_refill_points, vector<int>& act_stop_points) {
-	int n_min_stops = 0;
-	int n_val_stops;
-	int distance_covered = 0;
-	int nxt_possible2cover = limit;
+	int n_min_stops = 0;							// minimum number of stops
+	int n_val_stops;								  // total number of refill points
+	int distance_covered = 0;					// total distance covered
+	int nxt_possible2cover = limit;		// distance possible to cover after refill
 	int loc = 0;
 	cout << "MinRefillPoints ... " << endl;
 
-	// Append starting distance and destinal distance to the refill points
+	// Append starting distance and destination distance to the refill points
   avl_refill_points.emplace(avl_refill_points.begin(), 0);
 	avl_refill_points.push_back(distance2cover);
 	n_val_stops = avl_refill_points.size();
-
-	display(avl_refill_points);
 
 	// Destination reached? exit!
 	while (distance_covered < distance2cover) {
@@ -67,12 +65,12 @@ int main(){
 	int distance_per_refill;
 	int tmp;
 	vector<int> avl_refill_points;
-	vector<int> act_stop_points;
+	vector<int> act_stop_points;		// points at which refill happened
 	int min_num_refills;
 
 	cout << "Enter distance to cover : ";
 	cin >> distance2cover;
-	cout << "Distance pre refill : ";
+	cout << "Distance per refill : ";
 	cin >> distance_per_refill;
 	cout << "Number of refill points : ";
   cin >> num_stops;
